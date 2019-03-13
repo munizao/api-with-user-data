@@ -21,7 +21,7 @@ test('Make Card List Template', assert => {
     };
 
     //act
-    const result = makeListTemplate(card)
+    const result = makeListTemplate(card);
     //assert
     assert.htmlEqual(result, expected);
 });
