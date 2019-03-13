@@ -1,4 +1,4 @@
-import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/hash-query.js'
+import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/hash-query.js';
 
 const test = QUnit.test;
 
@@ -6,13 +6,10 @@ test('Write search to empty query', assert => {
     //arrange
     const existingQuery = '';
     const expected = 'name=goblin&page=1';
-    const searchOptions = {
-        name: 'goblin',
-        page: 1
-    };
+    const searchTerm = 'goblin';
 
     //act
-    const result = writeSearchToQuery(existingQuery, searchOptions);
+    const result = writeSearchToQuery(existingQuery, searchTerm);
 
     //assert
     assert.equal(result, expected);
@@ -22,11 +19,9 @@ test ('writing search to existing query changes search and resets page', assert 
     //arrange
     const existingQuery = 'name=goblin&page=2';
     const expected = 'name=dragon&page=1';
-    const searchOptions = {
-        name: 'dragon'
-    };
+    const searchTerm = 'dragon';
     //act
-    const result = writeSearchToQuery(existingQuery, searchOptions);
+    const result = writeSearchToQuery(existingQuery, searchTerm);
     //assert
     assert.equal(result, expected);
 });

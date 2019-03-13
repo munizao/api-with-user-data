@@ -13,9 +13,9 @@ export function writePageToQuery(existingQuery, page) {
     return searchParams.toString();
 }
 
-export function writeSearchToQuery(existingQuery, searchOptions) {
+export function writeSearchToQuery(existingQuery, searchTerm) {
     const searchParams = new URLSearchParams(existingQuery);
-    searchParams.set('name', searchOptions.name);
+    searchParams.set('name', searchTerm);
     searchParams.set('page', 1);
     return searchParams.toString();
 }
