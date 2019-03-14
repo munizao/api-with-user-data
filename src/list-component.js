@@ -4,7 +4,7 @@ import { auth, favoritesByUserRef } from './firebase.js';
 export function makeListTemplate(card) {
     const html = /*html*/ `
         <li>
-            <span class ="favorite">❋</span>
+            <span class ="favorite-star">❋</span>
             <h2>${card.name}</h2>
             <p>${card.manaCost}</p>
             <img src="${card.imageUrl}">
@@ -25,22 +25,48 @@ export default function loadCards(cards) {
     }
     cards.forEach(card => {
         const dom = makeListTemplate(card);
-        const favoriteStar = dom.querySelector('.favorite');
+        const favoriteStar = dom.querySelector('.favorite-star');
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
         const userFavoriteCardRef = userFavoritesRef.child(card.id);
+        userFavoriteCardRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                let isFavorite = false;
+                if(value) {
+                    addFavorite();
+                }
+                else {
+                    removeFavorite();
+                }
 
-        favoriteStar.addEventListener('click', () => {
-            console.log(card);
-            userFavoriteCardRef.set({
-                id: card.multiverseid,
-                name: card.name,
-                manaCost: card.manaCost || ' ',
-                text: card.text || ' ',
-                imageUrl: card.imageUrl || 'placeholder'
+                function addFavorite() {
+                    isFavorite = true;
+                    favoriteStar.classList.add('favorite');
+                }
+
+                function removeFavorite() {
+                    isFavorite = false;
+                    favoriteStar.classList.remove('favorite');
+                }
+
+                favoriteStar.addEventListener('click', () => {
+                    if(isFavorite) {
+                        userFavoriteCardRef.remove();
+                        removeFavorite();
+                    }
+                    else {
+                        userFavoriteCardRef.set({
+                            id: card.multiverseid,
+                            name: card.name,
+                            manaCost: card.manaCost || ' ',
+                            text: card.text || ' ',
+                            imageUrl: card.imageUrl || 'placeholder'
+                        });
+                        addFavorite();
+                    }
+                });
             });
-        });
-
         cardList.appendChild(dom);
     });
 }

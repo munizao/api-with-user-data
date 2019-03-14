@@ -40,3 +40,7 @@ h1 {
 #header-container img {
     width: 30px;
 }
+
+.favorite-star.favorite {
+    color: gold;
+}

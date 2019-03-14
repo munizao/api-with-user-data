@@ -5,10 +5,16 @@ import './search-component.js';
 import './paging-component.js';
 import { updatePaging } from './paging-component.js';
 import loadHeader from './header-component.js';
+import { auth } from './firebase.js';
 
 window.addEventListener('hashchange', loadQuery);
 
 loadHeader();
+
+auth.onAuthStateChanged(() => {
+    loadQuery();
+});
+
 
 function loadQuery() {
     const existingQuery = window.location.hash.slice(1);
