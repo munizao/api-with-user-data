@@ -1,4 +1,4 @@
-import { makeListTemplate } from '../src/list-template.js';
+import { makeListTemplate } from '../src/list-component.js';
 
 const test = QUnit.test;
 
