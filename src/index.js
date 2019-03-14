@@ -4,10 +4,11 @@ import { makeSearchURL } from './card-api.js';
 import './search-component.js';
 import './paging-component.js';
 import { updatePaging } from './paging-component.js';
+import loadHeader from './header-component.js';
 
 window.addEventListener('hashchange', loadQuery);
 
-
+loadHeader();
 
 function loadQuery() {
     const existingQuery = window.location.hash.slice(1);

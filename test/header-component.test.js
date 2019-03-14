@@ -18,7 +18,7 @@ test('make header template', assert => {
 test ('make profile', assert => {
     const user = {
         displayName: 'Alexandre Muniz',
-        photoUrl: '/'
+        photoURL: '/'
     };
 
     const expected = /*html*/`

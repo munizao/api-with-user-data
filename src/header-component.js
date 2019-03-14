@@ -13,9 +13,10 @@ export function makeHeader() {
 }
 
 export function makeProfile(user) {
+    const avatar = user.photoURL || './assets/avatar.png';
     const html = /*html*/ `
         <div class="profile">
-            <img src="${user.photoUrl}">
+            <img src="${avatar}">
             <span>${user.displayName}</span>
             <button>Sign Out</button>
         </div>
@@ -39,6 +40,7 @@ export default function loadHeader(options) {
 
     auth.onAuthStateChanged(user => {
         if(user) {
+            console.log(user);
             const userDom = makeProfile(user);
             const signOutButton = userDom.querySelector('button');
             signOutButton.addEventListener('click', () => {
