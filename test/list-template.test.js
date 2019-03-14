@@ -7,6 +7,7 @@ test('Make Card List Template', assert => {
     //arrange
     const expected = /*html*/ `
         <li>
+            <span class="favorite-star">❋</span>
             <h2>Festering Goblin</h2>
             <p>{B}</p>
             <img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129546">
