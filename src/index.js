@@ -3,6 +3,7 @@ import loadCards from './list-component.js';
 import { makeSearchURL } from './card-api.js';
 import './search-component.js';
 import './paging-component.js';
+import { updatePaging } from './paging-component.js';
 
 window.addEventListener('hashchange', loadQuery);
 
@@ -16,6 +17,7 @@ function loadQuery() {
         .then(response => Promise.all([response.json(), response.headers.get('total-count')]))
         .then(responses => {
             loadCards(responses[0].cards);
+            updatePaging(searchOptions, responses[1]);
         })
         .catch(err => {
             /* eslint-disable-next-line */
