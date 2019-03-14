@@ -17,7 +17,6 @@ export function makeListTemplate(card) {
 const cardList = document.getElementById('card-list');
 
 export default function loadCards(cards) {
-    console.log('loadCards');
     while(cardList.firstChild) {
         cardList.firstChild.remove();
     }
