@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
     
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <title>Find your favorite Magic: The Gathering cards</title>
 </head>
+
 <body>
-    <div id="header-container">
-    </div>
+    <div id="header-container"></div>
+
     <main>
         <p><a href="./favorites.html">See Your Favorites</a></p>
+
         <form id="search-form">
             <input type="text" name="name">
             <button>Search</button>
         </form>
+
         <section id="paging">
             <button id="previous-button">&lt; Previous</button>
-            Page <span id="current-page"></span> of <span id="total-pages"></span>
+            Page <span id="current-page">1</span> of <span id="total-pages"></span>
             <button id="next-button">Next &gt;</button>
         </section>
+        
         <ul id="card-list"></ul>
     </main>
+
     <script type="module" src="./src/index.js"></script>
 </body>
 </html>
