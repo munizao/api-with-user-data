@@ -22,7 +22,6 @@ function loadQuery() {
     const existingQuery = window.location.hash.slice(1);
     const searchOptions = readFromQuery(existingQuery);
     const url = makeSearchURL(searchOptions);
-    console.log(url);
     if(!url) {
         prompt.classList.remove('hidden');
         cardListContainer.classList.add('hidden');

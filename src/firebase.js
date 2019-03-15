@@ -6,7 +6,7 @@ var config = {
     storageBucket: 'auth-test-3342d.appspot.com',
     messagingSenderId: '381284056290'
 };
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 
