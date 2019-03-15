@@ -28,6 +28,7 @@ export default function loadCards(cards) {
         const favoriteStar = dom.querySelector('.favorite-star');
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
+        console.log(card);
         const userFavoriteCardRef = userFavoritesRef.child(card.id);
         userFavoriteCardRef.once('value')
             .then(snapshot => {
@@ -56,13 +57,14 @@ export default function loadCards(cards) {
                         removeFavorite();
                     }
                     else {
-                        userFavoriteCardRef.set({
-                            id: card.multiverseid,
+                        const cardObject = {
+                            id: card.id,
                             name: card.name,
                             manaCost: card.manaCost || ' ',
                             text: card.text || ' ',
                             imageUrl: card.imageUrl || 'placeholder'
-                        });
+                        };
+                        userFavoriteCardRef.set(cardObject);
                         addFavorite();
                     }
                 });
