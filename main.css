@@ -139,15 +139,19 @@ a {
     text-align: left;
     font-size: 20px;
     color: rgb(214, 209, 209);
+    position: relative;
+    top: -20px;
 }
 
 #card-list li {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
     height: auto;
     width: 250px;
-    margin: 10px;
+    margin-top: 10px;
     background-color: rgba(68, 67, 65, 0.9);
 }
 
@@ -164,12 +168,13 @@ a {
 
 .favorite-star.favorite {
     color: gold;
-    position: relative;
     cursor: pointer;
 }
 
 .favorite-star {
     cursor: pointer;
+    align-self: flex-end;
+    position: relative;
 }
 
 
