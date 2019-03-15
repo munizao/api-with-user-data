@@ -1,46 +1,175 @@
+@font-face {
+    src: url('./assets/JaceBeleren-Bold.ttf');
+    font-family: JaceBeleren-Bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('./assets/magic-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+/* HEADER-COMPONENT STYLING */
+#header-container {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-left: 50px;
+    font-family: JaceBeleren-Bold;
+    font-size: 28px;
+    color: rgb(202, 194, 194);
+    
+}
+
+header {
+    font-family: JaceBeleren-Bold;
+    margin-top: 25px;
+    margin-left: 25px;
+    color: rgb(202, 194, 194);
+}
+
+.header {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.header-secondary {
+    font-size: 35px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 25px;
+}
+
+.profile img {
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 8px;
+}
+
+.profile button {
+    margin-right: 50px;
+    margin-left: 10px;
+    padding: 5px;
+    background: khaki;
+    border: 1px dashed black;
+    font-size: 12px;
+}
+
+p {
+    text-align: right;
+    margin-right: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(182, 178, 178);
+}
+
+/* SEARCH FORM */
+#search-form {
+    display: flex;
+    align-items: center;
+    margin: 25px;
+}
+
+#search-form input {
+    height: 30px;
+    width: 100px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+}
+
+#search-form button {
+    height: 30px;
+    font-size: 12px;
+    background: khaki;
+    border: 1px dashed black;
+}
+
+#paging {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    color: rgb(250, 240, 240);
+}
+
+#paging span {
+    color: rgb(250, 240, 240);
+}
+
+#paging button {
+    padding: 5px;
+    margin: 10px;
+    background: khaki;
+    border: 1px dashed black;
+    font-size: 12px;
+}
+
+
+/* PAGING-COMPONENT STYLING */
 #card-list {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
     list-style-type: none;
 }
 
+#card-list h2 {
+    margin: 0;
+    text-align: left;
+    font-size: 20px;
+    color: rgb(214, 209, 209);
+}
+
 #card-list li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 10px;
     border: 1px solid black;
-    height: 350px;
+    border-radius: 10px;
+    height: auto;
     width: 250px;
     margin: 10px;
+    background-color: rgba(68, 67, 65, 0.9);
 }
 
 #card-list img {
-    height: 40%;
-    width: 40%;
+    width: 100%;
 }
 
-#header-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-header, .profile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-h1 {
-    margin-left: 20px;
-    flex-grow: 2;
-}
-
-#header-container img {
-    width: 30px;
+#card-list p {
+    font-size: 12px;
+    margin: 5px 0 8px 0;
+    text-align: left;
+    color: rgb(182, 178, 178);
 }
 
 .favorite-star.favorite {
     color: gold;
+    position: relative;
+    cursor: pointer;
 }
+
+.favorite-star {
+    cursor: pointer;
+}
+
+
