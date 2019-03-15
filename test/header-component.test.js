@@ -5,7 +5,8 @@ const test = QUnit.test;
 test('make header template', assert => {
     const expected = `
         <header>
-            <h1>Find your favorite Magic: The Gathering cards</h1>
+            <div class="header">Magic: The Gathering</div>
+            <div class="header-secondary">Find Your Favorite Cards</div>
         </header>
     `;
 

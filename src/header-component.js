@@ -3,7 +3,8 @@ import { auth } from './firebase.js';
 export function makeHeader() {
     const html = /*html*/ `
         <header>
-            <h1>Find your favorite Magic: The Gathering cards</h1>
+            <div class="header">Magic: The Gathering</div>
+            <div class="header-secondary">Find Your Favorite Cards</div>
         </header>
     `;
 
