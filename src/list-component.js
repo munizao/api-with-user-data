@@ -64,7 +64,7 @@ export default function loadCards(cards) {
                             name: card.name,
                             manaCost: card.manaCost || ' ',
                             text: card.text || ' ',
-                            imageUrl: card.imageUrl || 'placeholder'
+                            imageUrl: card.imageUrl || './assets/placeholder-image.jpg'
                         };
                         userFavoriteCardRef.set(cardObject);
                         addFavorite();
