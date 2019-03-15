@@ -41,7 +41,6 @@ export default function loadHeader(options) {
 
     auth.onAuthStateChanged(user => {
         if(user) {
-            console.log(user);
             const userDom = makeProfile(user);
             const signOutButton = userDom.querySelector('button');
             signOutButton.addEventListener('click', () => {

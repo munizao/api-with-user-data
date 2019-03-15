@@ -25,6 +25,7 @@ function loadQuery() {
     if(!url) {
         prompt.classList.remove('hidden');
         cardListContainer.classList.add('hidden');
+        return;
     }
     else {
         prompt.classList.add('hidden');
