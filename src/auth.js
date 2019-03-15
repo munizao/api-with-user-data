@@ -21,7 +21,7 @@ ui.start('#firebaseui-auth-container', {
                 .set({
                     uid: user.uid,
                     displayName: user.displayName,
-                     photoURL: user.photoURL
+                    photoURL: user.photoURL
                 });
             return true;
         }
