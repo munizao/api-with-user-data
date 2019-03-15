@@ -23,13 +23,17 @@
             <button>Search</button>
         </form>
 
-        <section id="paging">
-            <button id="previous-button">&lt; Previous</button>
-            Page <span id="current-page">1</span> of <span id="total-pages"></span>
-            <button id="next-button">Next &gt;</button>
-        </section>
-        
-        <ul id="card-list"></ul>
+        <p id="prompt">Search for a card to get started.</p>
+
+        <div id="card-list-container" class="hidden">
+            <section id="paging">
+                <button id="previous-button">&lt; Previous</button>
+                Page <span id="current-page">1</span> of <span id="total-pages"></span>
+                <button id="next-button">Next &gt;</button>
+            </section>
+            
+            <ul id="card-list"></ul>
+        </div>
     </main>
 
     <script type="module" src="./src/index.js"></script>

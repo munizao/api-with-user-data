@@ -15,11 +15,23 @@ auth.onAuthStateChanged(() => {
     loadQuery();
 });
 
+const cardListContainer = document.getElementById('card-list-container');
+const prompt = document.getElementById('prompt');
 
 function loadQuery() {
     const existingQuery = window.location.hash.slice(1);
     const searchOptions = readFromQuery(existingQuery);
     const url = makeSearchURL(searchOptions);
+    console.log(url);
+    if(!url) {
+        prompt.classList.remove('hidden');
+        cardListContainer.classList.add('hidden');
+    }
+    else {
+        prompt.classList.add('hidden');
+        cardListContainer.classList.remove('hidden');
+    }
+
     fetch(url)
         .then(response => Promise.all([response.json(), response.headers.get('total-count')]))
         .then(responses => {

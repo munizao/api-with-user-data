@@ -176,4 +176,14 @@ a {
     position: relative;
 }
 
+.hidden {
+    display: none;
+}
 
+#prompt {
+    text-align: left;
+    margin: 25px;
+    color: rgb(235, 230, 230);
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px black;
+}
