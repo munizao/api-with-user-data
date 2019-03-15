@@ -23,12 +23,14 @@ export default function loadCards(cards) {
     while(cardList.firstChild) {
         cardList.firstChild.remove();
     }
+    if(!cards) {
+        return;
+    }
     cards.forEach(card => {
         const dom = makeListTemplate(card);
         const favoriteStar = dom.querySelector('.favorite-star');
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
-        console.log(card);
         const userFavoriteCardRef = userFavoritesRef.child(card.id);
         userFavoriteCardRef.once('value')
             .then(snapshot => {

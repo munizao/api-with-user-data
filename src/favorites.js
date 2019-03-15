@@ -9,10 +9,10 @@ auth.onAuthStateChanged(user => {
     const userFavoritesRef = favoritesByUserRef.child(user.uid);
     userFavoritesRef.on('value', snapshot => {
         const value = snapshot.val();
-        if(!value) {
-            return;
+        let cards = null;
+        if(value) {
+            cards = convertObjectToArray(value);
         }
-        const cards = convertObjectToArray(value);
         loadCards(cards);
     });
 });
