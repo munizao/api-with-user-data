@@ -26,3 +26,21 @@ test('Make Card List Template', assert => {
     //assert
     assert.htmlEqual(result, expected);
 });
+
+test('Make template for card with empty properties', assert => {
+    const expected = /*html*/ `
+    <li>
+        <span class="favorite-star">❋</span>
+        <h2>Festering Goblin</h2>
+        <p> </p>
+        <img src="./assets/placeholder-image.jpg">
+        <p> </p>
+    </li>
+`;
+
+    const card = { name: 'Festering Goblin' };
+
+    const result = makeListTemplate(card);
+
+    assert.htmlEqual(result, expected);
+});

@@ -6,9 +6,9 @@ export function makeListTemplate(card) {
         <li>
             <span class ="favorite-star">❋</span>
             <h2>${card.name}</h2>
-            <p>${card.manaCost}</p>
+            <p>${card.manaCost || ' '}</p>
             <img src="${card.imageUrl || './assets/placeholder-image.jpg'}">
-            <p>${card.text}</p>
+            <p>${card.text || ' '}</p>
         </li>
     `;
 
